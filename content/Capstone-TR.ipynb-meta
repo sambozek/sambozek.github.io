@@ -1,0 +1,7 @@
+Title: Show Me the Monet
+Slug: capstone
+Date: 2016-07-11 14:30
+Category: posts
+Tags: python,capstone,monet,neural,network,art
+Author: Sam Bozek
+Summary: Use of a neural network to classify whether or not a painting is a Monet. 85% accuracy and can use neural network to generate modified images with Monet's style.
