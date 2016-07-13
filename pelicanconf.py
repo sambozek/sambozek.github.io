@@ -24,8 +24,9 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),)
 
 # Social widget
-SOCIAL = (('GitHub', 'https://github.com/sambozek/'),
-          ('LinkedIn', 'https://linkedin.com/in/sambozek'),)
+SOCIAL = (('github', 'https://github.com/sambozek/'),
+          ('linkedin', 'https://linkedin.com/in/sambozek'),
+          ('twitter', 'https://twitter.com/sam_bozek'))
 
 DEFAULT_PAGINATION = 10
 
