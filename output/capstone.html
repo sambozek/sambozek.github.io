@@ -1040,7 +1040,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Monet-Classification">Monet Classification<a class="anchor-link" href="#Monet-Classification">¶</a></h1>
+<h1 id="Monet-Classification">Monet Classification<a class="anchor-link" href="#Monet-Classification">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -1049,8 +1049,9 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h2><p>Currently the art market is estimated to be worth roughly $63.8 billion, from a high in 2014 of $68.2 billion <a href="https://news.artnet.com/market/tefaf-2016-art-market-report-443615">1</a>. With issues raised by both forgeries, some estimating to be up to over 50% of the global market<a href="http://news.artnet.com/in-brief/over-50-percent-of-art-is-fake-130821">2</a>, and found art can go for millions of dollars, even with controversy over its validity <a href="https://www.theguardian.com/artanddesign/2016/apr/12/lost-caravaggio-causes-rift-in-art-world">3</a><br>
-Maintaining the validity of a work of art is increasingly difficult even for well trained appraisers. The introduction of a classification system that can be trained on known works of an artist against those of other artists to give at least partial input to the appraiser.</br></p>
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>Currently the art market is estimated to be worth roughly $\$$63.8 billion, from a high in 2014 of $\$$68.2 billion <a href="https://news.artnet.com/market/tefaf-2016-art-market-report-443615">1</a>. With issues raised by both forgeries, some estimating to be up to over 50% of the global market<a href="http://news.artnet.com/in-brief/over-50-percent-of-art-is-fake-130821">2</a>, and found art can go for millions of dollars, even with controversy over its validity <a href="https://www.theguardian.com/artanddesign/2016/apr/12/lost-caravaggio-causes-rift-in-art-world">3</a><br>
+Maintaining the validity of a work of art is increasingly difficult even for well trained appraisers. The introduction of a classification system that can be trained on known works of an artist against those of other artists to give at least partial input to the appraiser.</p>
+
 </div>
 </div>
 </div>
@@ -1059,14 +1060,15 @@ Maintaining the validity of a work of art is increasingly difficult even for wel
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Executive-Summary">Executive Summary<a class="anchor-link" href="#Executive-Summary">¶</a></h3><p>Through focusing on a single artist, in this case Monet, it is possible to develop a classification method for determining whether or not a painting was done by that specific artist. In the case of Monet the classification saw a 90% successful classification in the test data and an 85% classification in the hold out set.<br>
-Through the use of Concurrent Neural Networks it is possible to generate an algorithm that is capable of being used in conjunction with a trained curator to positively identify the source of a painting. Although currently confined to Monet it is possible to extend this work to other artists, providing the collection of their work is large enough.</br></p>
-<h3 id="Data-Collection">Data Collection<a class="anchor-link" href="#Data-Collection">¶</a></h3><p>The data used was collected from two sources. A selection of WikiArt images not by Monet and images from Claude Monet Gallery. The total number of paintings in both categories was 1000, with 500 by Monet and 500 not by Monet. From the 500 of each category 250 were put into a training folder and the others were placed into a test folder. The structure allowed for binary class assignment to the images as either being a Monet or not.</p>
+<h3 id="Executive-Summary">Executive Summary<a class="anchor-link" href="#Executive-Summary">&#182;</a></h3><p>Through focusing on a single artist, in this case Monet, it is possible to develop a classification method for determining whether or not a painting was done by that specific artist. In the case of Monet the classification saw a 90% successful classification in the test data and an 85% classification in the hold out set.<br>
+Through the use of Concurrent Neural Networks it is possible to generate an algorithm that is capable of being used in conjunction with a trained curator to positively identify the source of a painting. Although currently confined to Monet it is possible to extend this work to other artists, providing the collection of their work is large enough.</p>
+<h3 id="Data-Collection">Data Collection<a class="anchor-link" href="#Data-Collection">&#182;</a></h3><p>The data used was collected from two sources. A selection of WikiArt images not by Monet and images from Claude Monet Gallery. The total number of paintings in both categories was 1000, with 500 by Monet and 500 not by Monet. From the 500 of each category 250 were put into a training folder and the others were placed into a test folder. The structure allowed for binary class assignment to the images as either being a Monet or not.</p>
 <p>All images were at least 250 × 250 and having RGB color channels. Images that were smaller than 250 pixels in either direction or in greyscale were removed from analysis.</p>
-<h3 id="Variable-Selection">Variable Selection<a class="anchor-link" href="#Variable-Selection">¶</a></h3><p>Image data contains a large amount of data, and typical variable selection is not viable. The predicted variable was whether or not a presented image is a monet or not. Predictors exist as the content of the paintings themselves. Color spaces, edges, and texture being primary variables of interest.</p>
-<h3 id="Model-Selection">Model Selection<a class="anchor-link" href="#Model-Selection">¶</a></h3><p>A convolutional neural network was the model chosen for this task. Through analyzing overlapping segments of the image and passing it through several probability formulas.<br>
-With a convolutional neural network there is also the benefit of local connectivity. This means that the probability of local neurons being activated determining the overall probability, rather than single neurons determining the overall probability of the class. This reduces the computational complexity substantially.</br></p>
-<h3 id="Data-Pipeline">Data Pipeline<a class="anchor-link" href="#Data-Pipeline">¶</a></h3><p>For the training data all of the images went through 20 transformations that included skewing, resizing, shifting, and flipping the image. These images were then fed to the neural network that would be used to generate the appropriate weights for the classification problem.</p>
+<h3 id="Variable-Selection">Variable Selection<a class="anchor-link" href="#Variable-Selection">&#182;</a></h3><p>Image data contains a large amount of data, and typical variable selection is not viable. The predicted variable was whether or not a presented image is a monet or not. Predictors exist as the content of the paintings themselves. Color spaces, edges, and texture being primary variables of interest.</p>
+<h3 id="Model-Selection">Model Selection<a class="anchor-link" href="#Model-Selection">&#182;</a></h3><p>A convolutional neural network was the model chosen for this task. Through analyzing overlapping segments of the image and passing it through several probability formulas.<br>
+With a convolutional neural network there is also the benefit of local connectivity. This means that the probability of local neurons being activated determining the overall probability, rather than single neurons determining the overall probability of the class. This reduces the computational complexity substantially.</p>
+<h3 id="Data-Pipeline">Data Pipeline<a class="anchor-link" href="#Data-Pipeline">&#182;</a></h3><p>For the training data all of the images went through 20 transformations that included skewing, resizing, shifting, and flipping the image. These images were then fed to the neural network that would be used to generate the appropriate weights for the classification problem.</p>
+
 </div>
 </div>
 </div>
@@ -1075,28 +1077,34 @@ With a convolutional neural network there is also the benefit of local connectiv
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-Exploration-and-Visualization">Data Exploration and Visualization<a class="anchor-link" href="#Data-Exploration-and-Visualization">¶</a></h2><p>The first image that was passed through this function was Monet's <em>La Gare Saint-Lazare</em>, which was painted in 1877. A relatively early painting by him, it shows his dedication to capturing the colors and motion that would come to define the impressionist movement.</p>
-<div style="text-align:center"><img height="344" src="https://snag.gy/2Nm4XE.jpg" width="375" /></div>
+<h2 id="Data-Exploration-and-Visualization">Data Exploration and Visualization<a class="anchor-link" href="#Data-Exploration-and-Visualization">&#182;</a></h2><p>The first image that was passed through this function was Monet's <em>La Gare Saint-Lazare</em>, which was painted in 1877. A relatively early painting by him, it shows his dedication to capturing the colors and motion that would come to define the impressionist movement.</p>
+<div style="text-align:center"><img src="https://snag.gy/2Nm4XE.jpg" height="344" width="375"></div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">early</span> <span class="o">=</span> <span class="s1">'Photos/Early - La Gare Saint-Lazare 1877.jpg'</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s1">'La Gare Saint-Lazare 1877'</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">early</span> <span class="o">=</span> <span class="s1">&#39;Photos/Early - La Gare Saint-Lazare 1877.jpg&#39;</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;La Gare Saint-Lazare 1877&#39;</span>
 <span class="n">rgb_hist</span><span class="p">(</span><span class="n">early</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
-<img height="488" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+4AAAPRCAYAAABjyPLGAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+4AAAPRCAYAAABjyPLGAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3XmYXGWZsPH7yUoCIZBAiAkJEMKO7KDswoiAgDiuOCoo
 7tvouHzOKCo66iyO4riPG4qoCKggIAKyi4jsO4QECCGENSEJZCHpvN8f7znpotPVXdXd1VXVuX/X
 VdeprjrvOU+dOlVdz3m3SCkhSZIkSZJa07BmByBJkiRJkqozcZckSZIkqYWZuEuSJEmS1MJM3CVJ
@@ -2493,11 +2501,14 @@ ERERkRCmxF1EREREREQkhClxFxEREREREQlhStxFREREREREQpgSdxEREREREZEQpsRdRERERERE
 JIQpcRcREREREREJYUrcRUREREREREKYEncRERERERGREKbEXURERERERCSEKXEXERERERERCWFK
 3EVERERERERCmBJ3ERERERERkRCmxF1EREREREQkhClxFxEREREREQlh/w8v5Isny3Z+xAAAAABJ
 RU5ErkJggg==
-" width="503">
-</img></div>
+" width="503" height="488">
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -2505,27 +2516,33 @@ RU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The final image here is another image of Water Lilies. Monet had cataracts when he painted this interpretation. The colors are certainly much more muted, and red has a much greater weight than the other colors, which is very typical of patients suffering from cataracts.</p>
-<div style="text-align:center"><img height="344" src="https://snag.gy/1onP3m.jpg" width="375" /></div>
+<div style="text-align:center"><img src="https://snag.gy/1onP3m.jpg" height="344" width="375"></div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [11]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">late</span> <span class="o">=</span> <span class="s1">'Photos/Late - Water Lilies and Reflections of a Willow 1916-1919.jpg'</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s1">'Water Lilies and Reflections of a Willow 1916-1919'</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">late</span> <span class="o">=</span> <span class="s1">&#39;Photos/Late - Water Lilies and Reflections of a Willow 1916-1919.jpg&#39;</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Water Lilies and Reflections of a Willow 1916-1919&#39;</span>
 <span class="n">rgb_hist</span><span class="p">(</span><span class="n">late</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
-<img height="488" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+EAAAPRCAYAAACSw6lLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+EAAAPRCAYAAACSw6lLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xe8HGXZ//HvlYSQECD03gxVmiA1lNAUREUUEPEHggh2
 EcvziIoCIupjAxQVxAYCUkUQaSpdkBJAmpTQkd5iQgoh51y/P6572Mlmds/uObuzZzef9+u1rz1n
 575n7p22c81dxtxdAAAAAACg/UZ0ugAAAAAAACwoCMIBAAAAACgJQTgAAAAAACUhCAcAAAAAoCQE
@@ -3929,27 +3946,31 @@ VOfKgOlr3A6GOldJuIiIiIiIiEiCaEy4iIiIiIiISIIoCRcRERERERFJECXhIiIiIiIiIgmiJFxE
 REREREQkQZSEi4iIiIiIiCSIknARERERERGRBFESLiIiIiIiIpIgSsJFREREREREEkRJuIiIiIiI
 iEiCKAkXERERERERSRAl4SIiIiIiIiIJoiRcREREREREJEGUhIuIiIiIiIgkiJJwERERERERkQRR
 Ei4iIiIiIiKSIErCRURERERERBJESbiIiIiIiIhIgvx/Z2UBgKHjlwgAAAAASUVORK5CYII=
-" width="496">
-</img></div>
+" width="496" height="488">
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Interpretation-of-Findings">Interpretation of Findings<a class="anchor-link" href="#Interpretation-of-Findings">¶</a></h3><p>The neural network used in the course of this experiment was found to accurately determine whether or not a painting was done by Monet or not. With the success that is found through the classification of Monet it can certainly be applied to a variety of other artists and styles. Moving away from exclusively artist classification will reduce the probablility of false positives.</p>
-<h3 id="Description-of-Key-Code">Description of Key Code<a class="anchor-link" href="#Description-of-Key-Code">¶</a></h3><p>Keras was used for this project with a Theano backend. This allowed for the use of a GPU to expedite the speed at which the neural network is able to process the images and their associated transformations.</p>
+<h3 id="Interpretation-of-Findings">Interpretation of Findings<a class="anchor-link" href="#Interpretation-of-Findings">&#182;</a></h3><p>The neural network used in the course of this experiment was found to accurately determine whether or not a painting was done by Monet or not. With the success that is found through the classification of Monet it can certainly be applied to a variety of other artists and styles. Moving away from exclusively artist classification will reduce the probablility of false positives.</p>
+<h3 id="Description-of-Key-Code">Description of Key Code<a class="anchor-link" href="#Description-of-Key-Code">&#182;</a></h3><p>Keras was used for this project with a Theano backend. This allowed for the use of a GPU to expedite the speed at which the neural network is able to process the images and their associated transformations.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Data Cleaning and Preparation</span>
 
 <span class="kn">from</span> <span class="nn">keras.preprocessing.image</span> <span class="kn">import</span> <span class="n">ImageDataGenerator</span><span class="p">,</span> <span class="n">array_to_img</span><span class="p">,</span> <span class="n">img_to_array</span><span class="p">,</span><span class="n">load_img</span>
@@ -3964,42 +3985,50 @@ Ei4iIiIiIiKSIErCRURERERERBJESbiIiIiIiIhIgvx/Z2UBgKHjlwgAAAAASUVORK5CYII=
                             <span class="n">zoom_range</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> 
                             
             
-                            <span class="n">fill_mode</span><span class="o">=</span><span class="s1">'nearest'</span><span class="p">,</span> <span class="c1"># Missing pixels from transformations are filled by nearest pixel of manipulated image</span>
+                            <span class="n">fill_mode</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="c1"># Missing pixels from transformations are filled by nearest pixel of manipulated image</span>
                             <span class="n">horizontal_flip</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
                             <span class="n">vertical_flip</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
                             <span class="n">rescale</span><span class="o">=</span><span class="mf">1.</span><span class="o">/</span><span class="mi">225</span><span class="p">,</span> 
                           <span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Using Theano backend.
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">d_gen</span><span class="o">.</span><span class="n">flow</span><span class="p">(</span><span class="n">monet_array</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                        <span class="n">save_to_dir</span><span class="o">=</span><span class="s1">'mod'</span><span class="p">,</span> <span class="n">save_prefix</span><span class="o">=</span><span class="s1">'monet'</span><span class="p">,</span> 
-                        <span class="n">save_format</span><span class="o">=</span><span class="s1">'jpeg'</span><span class="p">):</span>
+                        <span class="n">save_to_dir</span><span class="o">=</span><span class="s1">&#39;mod&#39;</span><span class="p">,</span> <span class="n">save_prefix</span><span class="o">=</span><span class="s1">&#39;monet&#39;</span><span class="p">,</span> 
+                        <span class="n">save_format</span><span class="o">=</span><span class="s1">&#39;jpeg&#39;</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">if</span> <span class="n">t</span> <span class="o">></span> <span class="mi">20</span><span class="p">:</span> <span class="c1"># Create 20 manipulated images</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span> <span class="c1"># Create 20 manipulated images</span>
         <span class="k">break</span> 
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -4007,8 +4036,8 @@ Ei4iIiIiIiKSIErCRURERERERBJESbiIiIiIiIhIgvx/Z2UBgKHjlwgAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As an example this image</p>
-<div style="text-align:center"><img height="344" src="https://snag.gy/EFj8z3.jpg" width="375" /></div><p>Undergoes these following twenty transformations.</p>
-<div style="text-align:center"><img height="344" src="https://media.giphy.com/media/goUlPPsMzrGXS/giphy.gif" width="375" /></div>
+<div style="text-align:center"><img src="https://snag.gy/EFj8z3.jpg" height="344" width="375"></div><p>Undergoes these following twenty transformations.</p>
+<div style="text-align:center"><img src="https://media.giphy.com/media/goUlPPsMzrGXS/giphy.gif" height="344" width="375"></div>
 </div>
 </div>
 </div>
@@ -4017,41 +4046,46 @@ Ei4iIiIiIiKSIErCRURERERERBJESbiIiIiIiIhIgvx/Z2UBgKHjlwgAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Creation-of-the-Model">Creation of the Model<a class="anchor-link" href="#Creation-of-the-Model">¶</a></h1><p><em>Originally the model used was a three step neural network, but it was expanded up to four. This was becasue the initial data used in exploration did not have great fidelity. When the resolution of the input photos was increased, the reliability of the model was suitable for the introduction of another layer in order for more detailed classification.</em></p>
+<h1 id="Creation-of-the-Model">Creation of the Model<a class="anchor-link" href="#Creation-of-the-Model">&#182;</a></h1><p><em>Originally the model used was a three step neural network, but it was expanded up to four. This was becasue the initial data used in exploration did not have great fidelity. When the resolution of the input photos was increased, the reliability of the model was suitable for the introduction of another layer in order for more detailed classification.</em></p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
 
 <span class="c1"># Four Layers. Expanded from three due to increased accuracy</span>
 
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Convolution2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">)))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">'relu'</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>  
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
 
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Convolution2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">'relu'</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
 
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Convolution2D</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">'relu'</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
 
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Convolution2D</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">'relu'</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>WARNING (theano.gof.cmodule): ModuleCache.refresh() Found key without dll in cache, deleting it. /private/tmp/sebozek/theano.NOBACKUP/compiledir_Darwin-15.5.0-x86_64-i386-64bit-i386-2.7.11-64/tmpXHS3IY/key.pkl
@@ -4059,39 +4093,43 @@ WARNING (theano.gof.cmodule): ModuleCache.refresh() Found key without dll in cac
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Flatten</span><span class="p">())</span>
 
 <span class="c1"># Have two dropouts in order to reduce overfitting. </span>
 <span class="c1"># Initial threshold followed by two sigmoids for confirmation.</span>
 
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">))</span>  
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>  
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>                 
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'sigmoid'</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
 <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>                 
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'sigmoid'</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
 
 
-<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">'binary_crossentropy'</span><span class="p">,</span>
-              <span class="n">optimizer</span><span class="o">=</span><span class="s1">'rmsprop'</span><span class="p">,</span>
-              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">'accuracy'</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span>
+              <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;rmsprop&#39;</span><span class="p">,</span>
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># use the above datagen for training</span>
 <span class="n">d_gen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span><span class="n">rescale</span><span class="o">=</span><span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span>
                           <span class="n">shear_range</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
@@ -4101,15 +4139,17 @@ WARNING (theano.gof.cmodule): ModuleCache.refresh() Found key without dll in cac
 <span class="c1"># For test only take in image at 200 by 200 pixels with no modification</span>
 <span class="n">test_d_gen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span><span class="n">rescale</span><span class="o">=</span><span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 250 epoch with 125 samples per epoch, 250 epochs. Close to convergence. </span>
 
 <span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_generator</span><span class="p">(</span><span class="n">monet_gen</span><span class="p">,</span>            
@@ -4120,48 +4160,57 @@ WARNING (theano.gof.cmodule): ModuleCache.refresh() Found key without dll in cac
                    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                    <span class="p">)</span>
 
-<span class="n">model</span><span class="o">.</span><span class="n">save_weights</span><span class="p">(</span><span class="s1">'monet_weights.h5'</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">save_weights</span><span class="p">(</span><span class="s1">&#39;monet_weights.h5&#39;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Recommendations">Recommendations<a class="anchor-link" href="#Recommendations">¶</a></h3><p>With introduction of several other artists to confirm that the model is capable of classifying them it would be natural to move from a binary system to a multiclass classification problem. This would allow for easier identification of found works.</p>
-<h3 id="Future-Validation">Future Validation<a class="anchor-link" href="#Future-Validation">¶</a></h3><p>As increasing data is passed through the neural network it would be wise not only to make sure that the correct artist is being assigned to the image, but also that the correct style is being assigned to the painting. With the validation of both the artist, style, and time period, it will be very useful in proper classification. Could even be tailored to design complimentary museum exhibits.</p>
+<h3 id="Recommendations">Recommendations<a class="anchor-link" href="#Recommendations">&#182;</a></h3><p>With introduction of several other artists to confirm that the model is capable of classifying them it would be natural to move from a binary system to a multiclass classification problem. This would allow for easier identification of found works.</p>
+<h3 id="Future-Validation">Future Validation<a class="anchor-link" href="#Future-Validation">&#182;</a></h3><p>As increasing data is passed through the neural network it would be wise not only to make sure that the correct artist is being assigned to the image, but also that the correct style is being assigned to the painting. With the validation of both the artist, style, and time period, it will be very useful in proper classification. Could even be tailored to design complimentary museum exhibits.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [13]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'loss'</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'val_loss'</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Monet Classification Model Loss'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Epoch'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Loss'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">'Test'</span><span class="p">,</span> <span class="s1">'Validation'</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'upper right'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Monet Classification Model Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span> <span class="s1">&#39;Validation&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
-<img height="280" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxIAAAIwCAYAAAAS111CAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxIAAAIwCAYAAAAS111CAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xl8XHW9//HXJ0uTNLTpvgACLVCQRSkIsggWuICACAou
 XJByrxVRWb0qys8rrV68XhUQ9LLIvqisl1oERLayFCoqe1kKbaHQ0oW2aZo2bbbv74/vOZOTycxk
 JpnJnJm8n4/HPCaZs8x3JudMzmc+n+/3a845REREREREclFR7AaIiIiIiEjpUSAhIiIiIiI5UyAh
@@ -5757,40 +5806,49 @@ K6zIeDtsOtVyAD+FHU42z/lx3HNCCCkAziNBCCGkakrOxacAHGOMqRgClhBCyNiFNRKEEEIIIYSQ
 QgghhJDcUEgQQgghhBBCckMhQQghhBBCCMkNhQQhhBBCCCEkNxQShBBCCCGEkNxQSBBCCCGEEEJy
 QyFBCCGEEEIIyQ2FBCGEEEIIISQ3FBKEEEIIIYSQ3FBIEEIIIYQQQnJDIUEIIYQQQgjJzf8HqNrx
 QgEUhlMAAAAASUVORK5CYII=
-" width="393">
-</img></div>
+" width="393" height="280">
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [150]:</div>
+<div class="prompt input_prompt">In&nbsp;[150]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'acc'</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">'val_acc'</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">'dashed'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Success Metric'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_acc&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Success Metric&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Monet Classification Model Accuracy'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Epoch'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Accuracy'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">'Test'</span><span class="p">,</span> <span class="s1">'Validation'</span><span class="p">,</span> <span class="s1">'Success Metric'</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">'lower right'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Monet Classification Model Accuracy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span> <span class="s1">&#39;Validation&#39;</span><span class="p">,</span> <span class="s1">&#39;Success Metric&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
-<img height="280" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxIAAAIwCAYAAAAS111CAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxIAAAIwCAYAAAAS111CAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzsnXeYXVXV/797ZpLMpE2SCQkkoUNCEwKhhSJNBRSkCYio
 INJUEAREXlFARfzxSkepUlREEKRIByG8BEOkJJQASSC9TzJJpve7f3+ss2bvu++p9547LevzPPc5
 t5yyzz773LPW/q61t9JaQxAEQRAEQRAEIQklPV0AQRAEQRAEQRD6HuJICIIgCIIgCIKQGHEkBEEQ
@@ -7210,11 +7268,14 @@ QcZAvN2pMoD38E4nG8nr07znIiKVQOtIiIhIhflaLv4KdHXOlZoCVkREai+NkRARERERkYgpkBAR
 ERERkYgpkBARERERkYhpjISIiIiIiERMLRIiIiIiIhIxBRIiIiIiIhIxBRIiIiIiIhIxBRIiIiIi
 IhIxBRIiIiIiIhIxBRIiIiIiIhIxBRIiIiIiIhIxBRIiIiIiIhIxBRIiIiIiIhIxBRIiIiIiIhIx
 BRIiIiIiIhIxBRIiIiIiIhIxBRIiIiIiIhKx/w/pIvvQxaAt/AAAAABJRU5ErkJggg==
-" width="393">
-</img></div>
+" width="393" height="280">
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -7222,6 +7283,7 @@ BRIiIiIiIhIxBRIiIiIiIhIxBRIiIiIiIhKx/w/pIvvQxaAt/AAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Due to the size of the dataset the output of both the accuracy and the loss were found to be very noisy. Both the loss and the accuracy were still found to be within the desired range.</p>
+
 </div>
 </div>
 </div>
@@ -7230,20 +7292,22 @@ BRIiIiIiIhIxBRIiIiIiIhIxBRIiIiIiIhKx/w/pIvvQxaAt/AAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Predicting-Most-and-Least-Likely-Monets">Predicting Most and Least Likely Monets<a class="anchor-link" href="#Predicting-Most-and-Least-Likely-Monets">¶</a></h2>
+<h2 id="Predicting-Most-and-Least-Likely-Monets">Predicting Most and Least Likely Monets<a class="anchor-link" href="#Predicting-Most-and-Least-Likely-Monets">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [21]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">predicted</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_generator</span><span class="p">(</span><span class="n">monet_class_gen</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -7251,27 +7315,34 @@ BRIiIiIiIhIxBRIiIiIiIhIxBRIiIiIiIhKx/w/pIvvQxaAt/AAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The closest to being Monet from artwork that was not done by Monet was found to be Atkinson Grimshaw's <em>London Bridge Half Tide</em></p>
-<div style="text-align:center"><img height="344" src="https://snag.gy/jEKIdF.jpg" width="375" /></div><p>Grimshaw was a painter of the Victorian era, notable for his romantist style. He focused on keeping the style 'true to life' and spent considerable effort in maintaining an appropriate style to reflect his work. Below is a histogram of this painting.</p>
+<div style="text-align:center"><img src="https://snag.gy/jEKIdF.jpg" height="344" width="375"></div><p>Grimshaw was a painter of the Victorian era, notable for his romantist style. He focused on keeping the style 'true to life' and spent considerable effort in maintaining an appropriate style to reflect his work. Below is a histogram of this painting.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [12]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">grimshaw</span> <span class="o">=</span> <span class="s1">'/Users/sebozek/Desktop/Better_Data/Hold_Out/Not Monet/10225.jpg'</span>
-<span class="n">grimshaw_img</span> <span class="o">=</span> <span class="s1">'London Bridge Half Tide'</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">grimshaw</span> <span class="o">=</span> <span class="s1">&#39;/Users/sebozek/Desktop/Better_Data/Hold_Out/Not Monet/10225.jpg&#39;</span>
+<span class="n">grimshaw_img</span> <span class="o">=</span> <span class="s1">&#39;London Bridge Half Tide&#39;</span>
 <span class="n">rgb_hist</span><span class="p">(</span><span class="n">grimshaw</span><span class="p">,</span> <span class="n">grimshaw_img</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
-<img height="488" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+EAAAPRCAYAAACSw6lLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+EAAAPRCAYAAACSw6lLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xm8JGV97/HPb1ZgFmYYGJSdQZCgRJDIlUXZ3BJFonHB
 uMXcazQGJZq4XTWMaxLFJdHEJRGNN4myRDEmKkYWUWRTATcWZXdEYGD2fc4894+nilPT091n6e7q
 0z2f9+vVrzqnq57qp6ur+5xvP0tFSglJkiRJktR70/pdAUmSJEmSdhaGcEmSJEmSamIIlyRJkiSp
@@ -8475,11 +8546,14 @@ OeEiIiIiIiIiUaIkXERERERERCRKlISLiIiIiIiIRImScBEREREREZEoURIuIiIiIiIiEiVKwkVE
 RERERESiREm4iIiIiIiISJQoCRcRERERERGJEiXhIiIiIiIiIlGiJFxEREREREQkSpSEi4iIiIiI
 iESJknARERERERGRKFESLiIiIiIiIhIlSsJFREREREREokRJuIiIiIiIiEiUKAkXERERERERiRIl
 4SIiIiIiIiJR8v9NkMfUjpCNVAAAAABJRU5ErkJggg==
-" width="496">
-</img></div>
+" width="496" height="488">
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -8487,28 +8561,35 @@ iESJknARERERERGRKFESLiIiIiIiIhIlSsJFREREREREokRJuIiIiIiIiEiUKAkXERERERERiRIl
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The furthest from Monet's work was Jan Sluyther's <em>Portrait of a Dancer</em>. It's post impressionist styles focused on duller, muted colors with small flourishes. The focus is not on a landscape or of a natural color scheme. The skin tone is nearly uniform, lines are focused more on definition by shading.</p>
-<p><div style="text-align:center"><img height="375" src="https://snag.gy/jk71Ur.jpg" width="344" /></div>
+<p><div style="text-align:center"><img src="https://snag.gy/jk71Ur.jpg" height="375" width="344"></div>
 Jan Sluyther was a Dutch post-impressionist. In his words his style was 'struggling with color'. This is very different from Monet's use of color in his work, where he put much thought into the colors in the composition, occasionally at the cost of his subject matter, since the vast majority of his work is oriented on landscapes and natural scenes, with less of a focus on people.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [13]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sluyther</span> <span class="o">=</span> <span class="s1">'/Users/sebozek/Desktop/Better_Data/Hold_Out/Not Monet/11012.jpg'</span>
-<span class="n">sluyther_img</span> <span class="o">=</span> <span class="s1">'Portrait of a Dancer'</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sluyther</span> <span class="o">=</span> <span class="s1">&#39;/Users/sebozek/Desktop/Better_Data/Hold_Out/Not Monet/11012.jpg&#39;</span>
+<span class="n">sluyther_img</span> <span class="o">=</span> <span class="s1">&#39;Portrait of a Dancer&#39;</span>
 <span class="n">rgb_hist</span><span class="p">(</span><span class="n">sluyther</span><span class="p">,</span> <span class="n">sluyther_img</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
-<img height="488" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+EAAAPRCAYAAACSw6lLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+EAAAPRCAYAAACSw6lLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xm8JFV99/HPbxZmmAFmGFbZBUEEFHEXkMVo4m6iqKgo
 UeOCy+MSjRqJjkbzxMRg1MQtUVRUVJBgfBQ3VgU3BEVUZBOGzWGZDWaY/Tx/nCqnp6e7b997+3ZV
 9Xzer1e/qqe7TvWvq6vv3O89p05FSglJkiRJkjT1plVdgCRJkiRJWwtDuCRJkiRJQ2IIlyRJkiRp
@@ -9949,11 +10030,14 @@ REREREREwkRJuIiIiIiIiEiYKAkXERERERERCRMl4SIiIiIiIiJhoiRcREREREREJEyUhIuIiIiI
 iIiEiZJwERERERERkTBREi4iIiIiIiISJkrCRURERERERMJESbiIiIiIiIhImCgJFxEREREREQkT
 JeEiIiIiIiIiYaIkXERERERERCRMlISLiIiIiIiIhImScBEREREREZEwURIuIiIiIiIiEiZKwkVE
 RERERETC5P8B+jlzBqY6aCAAAAAASUVORK5CYII=
-" width="496">
-</img></div>
+" width="496" height="488">
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -9961,30 +10045,35 @@ RERERETC5P8B+jlzBqY6aCAAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Also important to see how the model classifies Monet paintings to see if there is anything of broad interest in how the neural network is determining Monet paintings.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [77]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">monets</span> <span class="o">=</span> <span class="n">preds</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">250</span><span class="p">:]</span>
-<span class="n">monets</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Monet_Probability'</span><span class="p">]</span>
+<span class="n">monets</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Monet_Probability&#39;</span><span class="p">]</span>
 
-<span class="n">monet</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"img_name"</span><span class="p">,</span> <span class="s2">"width"</span><span class="p">,</span> <span class="s2">"x"</span><span class="p">,</span> <span class="s1">'height'</span><span class="p">,</span> <span class="s1">'bits'</span><span class="p">,</span> <span class="s1">'format'</span><span class="p">,</span> <span class="s1">'N/P'</span><span class="p">,</span> <span class="s1">'pixels'</span><span class="p">,</span> <span class="s1">'test'</span><span class="p">]</span>
-<span class="n">monets</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">monet</span><span class="p">[</span><span class="s1">'img_name'</span><span class="p">],</span> <span class="n">monets</span><span class="p">[</span><span class="s1">'Monet_Probability'</span><span class="p">])</span>
+<span class="n">monet</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;img_name&quot;</span><span class="p">,</span> <span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;bits&#39;</span><span class="p">,</span> <span class="s1">&#39;format&#39;</span><span class="p">,</span> <span class="s1">&#39;N/P&#39;</span><span class="p">,</span> <span class="s1">&#39;pixels&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">]</span>
+<span class="n">monets</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">monet</span><span class="p">[</span><span class="s1">&#39;img_name&#39;</span><span class="p">],</span> <span class="n">monets</span><span class="p">[</span><span class="s1">&#39;Monet_Probability&#39;</span><span class="p">])</span>
 
-<span class="n">monet_probs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">monets</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'title'</span><span class="p">,</span> <span class="s1">'monet_probability'</span><span class="p">])</span>
+<span class="n">monet_probs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">monets</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;monet_probability&#39;</span><span class="p">])</span>
 
-<span class="k">print</span> <span class="n">monet_probs</span><span class="p">[</span><span class="n">monet_probs</span><span class="p">[</span><span class="s1">'monet_probability'</span><span class="p">]</span> <span class="o">==</span> <span class="n">monet_probs</span><span class="p">[</span><span class="s1">'monet_probability'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
-<span class="k">print</span> <span class="n">monet_probs</span><span class="p">[</span><span class="n">monet_probs</span><span class="p">[</span><span class="s1">'monet_probability'</span><span class="p">]</span> <span class="o">==</span> <span class="n">monet_probs</span><span class="p">[</span><span class="s1">'monet_probability'</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()]</span>
+<span class="k">print</span> <span class="n">monet_probs</span><span class="p">[</span><span class="n">monet_probs</span><span class="p">[</span><span class="s1">&#39;monet_probability&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">monet_probs</span><span class="p">[</span><span class="s1">&#39;monet_probability&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
+<span class="k">print</span> <span class="n">monet_probs</span><span class="p">[</span><span class="n">monet_probs</span><span class="p">[</span><span class="s1">&#39;monet_probability&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">monet_probs</span><span class="p">[</span><span class="s1">&#39;monet_probability&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()]</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>                                        title  monet_probability
@@ -9994,8 +10083,10 @@ RERERETC5P8B+jlzBqY6aCAAAAAASUVORK5CYII=
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -10003,28 +10094,34 @@ RERERETC5P8B+jlzBqY6aCAAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The most Monet painting present in the hold out set was found to be <em>Farmyard in Normandy</em> painted by monet in 1863. A pastoral scene as he was defining his personal style. It has exhibits his traditional brush stroke manners. It has the nautral themes that are consistent with the middle phase of his work, while containing a wide color range.</p>
-<div style="text-align:center"><img height="344" src="https://snag.gy/FQJdex.jpg" width="375" /></div>
+<div style="text-align:center"><img src="https://snag.gy/FQJdex.jpg" height="344" width="375"></div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [14]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">p_monet</span> <span class="o">=</span> <span class="s1">'/Users/sebozek/Desktop/Better_Data/Hold_Out/Monet/Monet_Farmyard-in-Normandy___Selected.jpg'</span>
-<span class="n">p_monet_img</span> <span class="o">=</span> <span class="s1">'Farmyard in Normandy'</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">p_monet</span> <span class="o">=</span> <span class="s1">&#39;/Users/sebozek/Desktop/Better_Data/Hold_Out/Monet/Monet_Farmyard-in-Normandy___Selected.jpg&#39;</span>
+<span class="n">p_monet_img</span> <span class="o">=</span> <span class="s1">&#39;Farmyard in Normandy&#39;</span>
 
 <span class="n">rgb_hist</span><span class="p">(</span><span class="n">p_monet</span><span class="p">,</span> <span class="n">p_monet_img</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
-<img height="488" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+EAAAPRCAYAAACSw6lLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+EAAAPRCAYAAACSw6lLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3XfYZGV9//H3dyvbYGF3WZAqIh1/KoqKRGxEY9doxJ+J
 LTGxkKhRYxLb2lLUaC71p6apsSsENRI7IBrsio0uIGVhge2d3X2e+/fHfQ7P7OzMPP05c868X9c1
 13l2Trtn5szsfOZukVJCkiRJkiRNv1lVF0CSJEmSpEFhCJckSZIkaYYYwiVJkiRJmiGGcEmSJEmS
@@ -11402,11 +11499,14 @@ BFESLiIiIiIiIpIgSsJFREREREREEkRJuIiIiIiIiEiCKAkXERERERERSRAl4SIiIiIiIiIJoiRc
 REREREREJEGUhIuIiIiIiIgkiJJwERERERERkQRREi4iIiIiIiKSIErCRURERERERBJESbiIiIiI
 iIhIgigJFxEREREREUkQJeEiIiIiIiIiCaIkXERERERERCRBlISLiIiIiIiIJIiScBEREREREZEE
 +X8b4HuAdn6x+AAAAABJRU5ErkJggg==
-" width="496">
-</img></div>
+" width="496" height="488">
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -11414,29 +11514,36 @@ iIhIgigJFxEREREREUkQJeEiIiIiIiIiCaIkXERERERERCRBlISLiIiIiIiIJIiScBEREREREZEE
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>On the contrary the least likely to be a Monet was <em>The Grand Creuse at Pont de Vervy</em></p>
-<p><div style="text-align:center"><img height="344" src="https://snag.gy/dutUpP.jpg" width="375" /></div>
+<p><div style="text-align:center"><img src="https://snag.gy/dutUpP.jpg" height="344" width="375"></div>
 Not very similar to his previous works. It looks almost abstract impressionist rather than impressionist.Brush strokes are much broader and perspectives are slightly more skewed. This was the beginning of his period of focusing on the natural landscape, and this could be considered to be a rough draft of things to come. The landscape itself is the focus, and other objects present are not as important to the painting.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [15]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pn_monet</span> <span class="o">=</span> <span class="s1">'/Users/sebozek/Desktop/Better_Data/Hold_Out/Monet/Monet_The-Grand-Creuse-at-Pont-de-Vervy___Selected.jpg'</span>
-<span class="n">pn_monet_img</span> <span class="o">=</span> <span class="s1">'The Grand creuse at Pont de Vervy'</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pn_monet</span> <span class="o">=</span> <span class="s1">&#39;/Users/sebozek/Desktop/Better_Data/Hold_Out/Monet/Monet_The-Grand-Creuse-at-Pont-de-Vervy___Selected.jpg&#39;</span>
+<span class="n">pn_monet_img</span> <span class="o">=</span> <span class="s1">&#39;The Grand creuse at Pont de Vervy&#39;</span>
 
 <span class="n">rgb_hist</span><span class="p">(</span><span class="n">pn_monet</span><span class="p">,</span> <span class="n">pn_monet_img</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
-<img height="488" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA9QAAAPRCAYAAAAcGeA3AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA9QAAAPRCAYAAAAcGeA3AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xe4JFWZ+PHvyww5zTDkNAQBGUBEgpKDohiRpLBgXlwV
 d1XMkdE1/FBE17hiRAFFFGVxZVWSCJKjoICSBoc4DDMDTJ45vz9OFV23p7tv376h7739/TxPP9Vd
 VafqVHV1eOukSCkhSZIkSZIGZqVuZ0CSJEmSpLHIgFqSJEmSpA4YUEuSJEmS1AEDakmSJEmSOmBA
@@ -13250,63 +13357,74 @@ wo3deL/nKqEWERERERERiYDGUIuIiIiIiIhEQAm1iIiIiIiISASUUIuIiIiIiIhEQAm1iIiIiIiI
 SASUUIuIiIiIiIhEQAm1iIiIiIiISASUUIuIiIiIiIhEQAm1iIiIiIiISASUUIuIiIiIiIhEQAm1
 iIiIiIiISASUUIuIiIiIiIhEQAm1iIiIiIiISASUUIuIiIiIiIhEQAm1iIiIiIiISASUUIuIiIiI
 iIhEQAm1iIiIiIiISASUUIuIiIiIiIhE4P8ATnNBVlYALPAAAAAASUVORK5CYII=
-" width="490">
-</img></div>
+" width="490" height="488">
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="ROC-Curve-&amp;-Conclusion">ROC Curve & Conclusion<a class="anchor-link" href="#ROC-Curve-&amp;-Conclusion">¶</a></h1>
+<h1 id="ROC-Curve-&amp;-Conclusion">ROC Curve &amp; Conclusion<a class="anchor-link" href="#ROC-Curve-&amp;-Conclusion">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [164]:</div>
+<div class="prompt input_prompt">In&nbsp;[164]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">preds</span><span class="p">[</span><span class="s1">'Class'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">250</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">250</span>
-<span class="n">preds</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Prob_Monet'</span><span class="p">,</span> <span class="s1">'Class'</span><span class="p">]</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">preds</span><span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">250</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">250</span>
+<span class="n">preds</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Prob_Monet&#39;</span><span class="p">,</span> <span class="s1">&#39;Class&#39;</span><span class="p">]</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [175]:</div>
+<div class="prompt input_prompt">In&nbsp;[175]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span>
 
 <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thres</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">preds</span><span class="o">.</span><span class="n">Class</span><span class="p">,</span> <span class="n">preds</span><span class="o">.</span><span class="n">Prob_Monet</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">'k--'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;k--&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'ROC Curve For Monet Classification'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;ROC Curve For Monet Classification&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'False Positive Rate'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'True Positive Rate'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
-<img height="503" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+4AAAPuCAYAAACW5Ee+AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+4AAAPuCAYAAACW5Ee+AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3XmYbHddJ/73J2kSQgh7wi5ZJCwiUVYlQwgG6eRecQPH
 RkScnyIugBuoo4xEHAdFkdWoIwakXVAYWTQRHBEG8FbIQASFAQwkEQhBtiydXJKQ5Pv741TlVjrd
 fbvvra6tX6/nOU/frrN969SpvvWu71attQAAAADT6ZBJFwAAAABYn+AOAAAAU0xwBwAAgCkmuAMA
@@ -13858,11 +13976,14 @@ zMzMzMzMzJqJ57ibmZmZmZmZNTEH7mZmZmZmZmZNzIG7mZmZmZmZWRNz4G5mZmZmZmbWxBy4m5mZ
 mZmZmTUxB+5mZmZmZmZmTcyBu5mZmZmZmVkTc+BuZmZmZmZm1sQcuJuZmZmZmZk1MQfuZmZmZmZm
 Zk3MgbuZmZmZmZlZE3PgbmZmZmZmZtbEHLibmZmZmZmZNTEH7mZmZmZmZmZNzIG7mZmZmZmZWRNz
 4G5mZmZmZmbWxBy4m5mZmZmZmTWx/wPEh5nA8motPwAAAABJRU5ErkJggg==
-" width="503">
-</img></div>
+" width="503" height="503">
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -13871,6 +13992,7 @@ Zk3MgbuZmZmZmZlZE3PgbmZmZmZmZtbEHLibmZmZmZmZNTEH7mZmZmZmZmZNzIG7mZmZmZmZWRNz
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From the ROC curve above, and the model accuracy graph the Monet classifier has been found to perform above the specified sucess metrics. An interesting feature of the model is it is flexible enough to be expanded to additional artists. Moving forward it will be interesting to use this model to learn the styles of other painters, and see if there are any artists that require additional tweaking in order to gain as high or higher accuracy.</p>
 <p>In the end the use of a neural network allowed for the creation of a model that was accurate roughly 85% of the time when it came to predicting Monet paintings. With higher resolution images and through the use of cloud computing it could be refined for even more accuracy that would allow for better determination of specific artists.</p>
+
 </div>
 </div>
 </div>
@@ -13879,7 +14001,7 @@ Zk3MgbuZmZmZmZlZE3PgbmZmZmZmZtbEHLibmZmZmZmZNTEH7mZmZmZmZmZNzIG7mZmZmZmZWRNz
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="One-Last-Bit">One Last Bit<a class="anchor-link" href="#One-Last-Bit">¶</a></h1>
+<h1 id="One-Last-Bit">One Last Bit<a class="anchor-link" href="#One-Last-Bit">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13889,7 +14011,7 @@ Zk3MgbuZmZmZmZlZE3PgbmZmZmZmZtbEHLibmZmZmZmZNTEH7mZmZmZmZmZNzIG7mZmZmZmZWRNz
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Although not an inital part of the project there was a paper published recently called <a href="http://arxiv.org/pdf/1508.06576.pdf"><em>"A Neural Algorithm of Artistic Style"</em></a> which could be used to apply an artists style to a user input image. Through the use of a convolutional neural network they were able to use it to generate the appropriate filters to apply to the base image to create a new image of the style of the input image. Through ignoring the specific pixel values the filter of the CNN can be used to create the modified images, such as the following example:</p>
-<div style="text-align:center"><img height="344" src="https://snag.gy/sWAlfb.jpg" width="375" /></div>
+<div style="text-align:center"><img src="https://snag.gy/sWAlfb.jpg" height="344" width="375"></div>
 </div>
 </div>
 </div>
