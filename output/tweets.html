@@ -8,7 +8,7 @@
 		<!-- Enable responsiveness on mobile devices-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-		<title>Sam's Data Source</title>
+		<title>Ad Astra Per Alas Porci</title>
 
 		<!-- CSS -->
 		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
@@ -31,7 +31,7 @@
 			<h1>
 				<a href="/">
 					<img class="profile-picture" src="https://snag.gy/ZIKC4O.jpg">
-					Sam's Data Source
+					Ad Astra Per Alas Porci
 				</a>
 			</h1>
 			<p class="lead"></p>
@@ -1037,33 +1037,30 @@ h6:hover .anchor-link {
 </style>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">'white'</span><span class="p">)</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Intro">Intro<a class="anchor-link" href="#Intro">&#182;</a></h1><p>From kaggle, someone posted a collection of tweets from accounts that are following ISIS.</p>
+<h1 id="Intro">Intro<a class="anchor-link" href="#Intro">¶</a></h1><p>From kaggle, someone posted a collection of tweets from accounts that are following ISIS.</p>
 <p>This project was focused on the visualization aspect to determine whether or not those who are tweeting at large have large audiences, or like me, have few followers. Looking at the number of the tweets they've put out as well and the followers they've accrued it will be possible to see how broad of an audience the ISIS followers are reaching.</p>
-
 </div>
 </div>
 </div>
@@ -1073,90 +1070,80 @@ h6:hover .anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id="eda"></a></p>
-<h1 id="Early-Data-Analysis">Early Data Analysis<a class="anchor-link" href="#Early-Data-Analysis">&#182;</a></h1>
+<h1 id="Early-Data-Analysis">Early Data Analysis<a class="anchor-link" href="#Early-Data-Analysis">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tweets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;tweets.csv&#39;</span><span class="p">)</span>
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tweets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'tweets.csv'</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">tweets</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
-
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>username</th>
-      <th>description</th>
-      <th>location</th>
-      <th>followers</th>
-      <th>numberstatuses</th>
-      <th>time</th>
-      <th>tweets</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GunsandCoffee</td>
-      <td>GunsandCoffee70</td>
-      <td>ENGLISH TRANSLATIONS: http://t.co/QLdJ0ftews</td>
-      <td>NaN</td>
-      <td>640</td>
-      <td>49</td>
-      <td>1/6/2015 21:07</td>
-      <td>ENGLISH TRANSLATION: 'A MESSAGE TO THE TRUTHFU...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>GunsandCoffee</td>
-      <td>GunsandCoffee70</td>
-      <td>ENGLISH TRANSLATIONS: http://t.co/QLdJ0ftews</td>
-      <td>NaN</td>
-      <td>640</td>
-      <td>49</td>
-      <td>1/6/2015 21:27</td>
-      <td>ENGLISH TRANSLATION: SHEIKH FATIH AL JAWLANI '...</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>name</th>
+<th>username</th>
+<th>description</th>
+<th>location</th>
+<th>followers</th>
+<th>numberstatuses</th>
+<th>time</th>
+<th>tweets</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>GunsandCoffee</td>
+<td>GunsandCoffee70</td>
+<td>ENGLISH TRANSLATIONS: http://t.co/QLdJ0ftews</td>
+<td>NaN</td>
+<td>640</td>
+<td>49</td>
+<td>1/6/2015 21:07</td>
+<td>ENGLISH TRANSLATION: 'A MESSAGE TO THE TRUTHFU...</td>
+</tr>
+<tr>
+<th>1</th>
+<td>GunsandCoffee</td>
+<td>GunsandCoffee70</td>
+<td>ENGLISH TRANSLATIONS: http://t.co/QLdJ0ftews</td>
+<td>NaN</td>
+<td>640</td>
+<td>49</td>
+<td>1/6/2015 21:27</td>
+<td>ENGLISH TRANSLATION: SHEIKH FATIH AL JAWLANI '...</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1166,109 +1153,94 @@ h6:hover .anchor-link {
 <p>For the analysis that's needed it's not exactly needed to maintain all of the information present. Although it would be interesting to create a network of the users, it would be more interesting to see who are the most common tweeters and then take a look at what the common bigrams for the most frequent tweeters are versus those who are not.</p>
 <p>It will also be interesting to see if spikes of tweets occur following terrorist attacks. Should that turn to be true, then it will be interesting which attacks garnered the most activity.</p>
 <p>Finally the majority of the tweets do not have an associated location. However the time is still present so based on the activity of the user their timezone can be infered.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">user_count</span> <span class="o">=</span> <span class="n">tweets</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 <span class="n">user_count</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">user_count</span><span class="p">)</span>
 <span class="n">user_count</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
-
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>112.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>155.446429</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>234.948138</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>4.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>39.750000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>96.000000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>153.750000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>1475.000000</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>count</th>
+<td>112.000000</td>
+</tr>
+<tr>
+<th>mean</th>
+<td>155.446429</td>
+</tr>
+<tr>
+<th>std</th>
+<td>234.948138</td>
+</tr>
+<tr>
+<th>min</th>
+<td>4.000000</td>
+</tr>
+<tr>
+<th>25%</th>
+<td>39.750000</td>
+</tr>
+<tr>
+<th>50%</th>
+<td>96.000000</td>
+</tr>
+<tr>
+<th>75%</th>
+<td>153.750000</td>
+</tr>
+<tr>
+<th>max</th>
+<td>1475.000000</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">user_count</span><span class="p">[</span><span class="n">user_count</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">154</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="s1">&#39;Tweets&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Most Active Users Following ISIS on Twitter&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of Tweets&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Twitter Username&#39;</span><span class="p">)</span>
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">user_count</span><span class="p">[</span><span class="n">user_count</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">></span> <span class="mi">154</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'barh'</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="s1">'Tweets'</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Most Active Users Following ISIS on Twitter'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Number of Tweets'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Twitter Username'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
-
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACAQAAAP0CAYAAAA3SHy/AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img height="506" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACAQAAAP0CAYAAAA3SHy/AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3XeYXVW5+PFvCL1LCyZ0kJfeu3QQEFGKgAgERLgIFlS8
 IupVsCKKoIhXUK7wM4L0Kr0qPaA0EV+kKkiTJr1lfn+sdcjJyZmWmcmEk+/neebZzN5rr712Hc16
 17tGdHV1IUmSJEmSJEmSJEmSOssMw90ASZIkSZIkSZIkSZI0+AwIkCRJkiRJkiRJkiSpAxkQIEmS
@@ -2456,14 +2428,11 @@ JKkDmRAgSZIkSZIkSZIkSVIHMiFAkiRJkiRJkiRJkqQOZEKAJEmSJEmSJEmSJEkdyIQASZIkSZIk
 SZIkSZI6kAkBkiRJkiRJkiRJkiR1IBMCJEmSJEmSJEmSJEnqQCYESJIkSZIkSZIkSZLUgUwIkCRJ
 kiRJkiRJkiSpA5kQIEmSJEmSJEmSJElSBzIhQJIkSZIkSZIkSZKkDvT/FgTxFRabDtIAAAAASUVO
 RK5CYII=
-" width="1026" height="506">
-</div>
-
-</div>
-
+" width="1026">
+</img></div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -2471,39 +2440,32 @@ RK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Looking at the English names above, since I can't read Arabic, none of the names are inheirently indicitive of sympathy towards ISIS, save perhaps for Rami which translates to <em>one who believes</em>. This is only by volume of tweets. It could be that Rami has few to no followers and is just retweeting what he sees. Will look at the accounts with the most followers as well, and finally a metric of the number of followers that the account has relative to the followers they have.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">popular</span> <span class="o">=</span> <span class="n">tweets</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;followers&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">popular</span> <span class="o">=</span> <span class="n">tweets</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">'name'</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'followers'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
 
-<span class="n">popular</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">use_index</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Follower to Tweet Count of Most Followed Users&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Followers&quot;</span><span class="p">,</span> <span class="s2">&quot;Total Number of Tweets&quot;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">)</span>
+<span class="n">popular</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'barh'</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">use_index</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'name'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Follower to Tweet Count of Most Followed Users"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">"Followers"</span><span class="p">,</span> <span class="s2">"Total Number of Tweets"</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Count"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Name"</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
-
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACjUAAAQFCAYAAADzfNhKAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img height="514" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACjUAAAQFCAYAAADzfNhKAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xe8HHXVx/HPDSS0BAIJofdyKAIWQHqJgIDgg6CoICI8
 NBVRLCiiYgdRkUcs2AApgqCAoFRpEaQJIv3Qe68BQs8+f5zfZH53svXe3Xtv4vf9eu1r787O/OY3
 fZI5e05frVZDRERERERERERERERERERERERERGS4jRruDoiIiIiIiIiIiIiIiIiIiIiIiIiIgIIa
@@ -4377,60 +4339,47 @@ AAAAU0FTIwAAAAAAAAAAADAVNDUCAAAAAAAAAAAAU0FTIwAAAAAAAAAAADAVNDUCAAAAAAAAAAAA
 U0FTIwAAAAAAAAAAADAVNDUCAAAAAAAAAAAAU0FTIwAAAAAAAAAAADAVNDUCAAAAAAAAAAAAU0FT
 IwAAAAAAAAAAADAVNDXBkuP4AAAAEklEQVQCAAAAAAAAAAAAU+H/A/0o+kG4vZo3AAAAAElFTkSu
 QmCC
-" width="1306" height="514">
-</div>
-
-</div>
-
+" width="1306">
+</img></div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tweets</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">tweets</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tweets</span><span class="p">[</span><span class="s1">'time'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">tweets</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tweets</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tweets</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span>
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tweets</span><span class="p">[</span><span class="s1">'day'</span><span class="p">]</span> <span class="o">=</span> <span class="n">tweets</span><span class="p">[</span><span class="s1">'time'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">))</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">tweets</span><span class="o">.</span><span class="n">dtypes</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
-
-
 <div class="output_text output_subarea output_execute_result">
 <pre>name                      object
 username                  object
@@ -4443,62 +4392,51 @@ tweets                    object
 day                       object
 dtype: object</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">days</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tweets</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
 <span class="n">days</span> <span class="o">=</span> <span class="n">days</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
-<span class="n">days</span><span class="p">[</span><span class="s1">&#39;Tweets&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">days</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">]</span>
-<span class="k">del</span> <span class="n">days</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">]</span>
+<span class="n">days</span><span class="p">[</span><span class="s1">'Tweets'</span><span class="p">]</span> <span class="o">=</span> <span class="n">days</span><span class="p">[</span><span class="s1">'day'</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">days</span><span class="p">[</span><span class="s1">'day'</span><span class="p">]</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">days</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="n">days</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">days</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'line'</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">days</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Daily Tweet Count&#39;</span><span class="p">,</span> <span class="s1">&#39;7-Day Rolling Mean of Tweets&#39;</span><span class="p">],</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;upper right&#39;</span><span class="p">,</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">'Daily Tweet Count'</span><span class="p">,</span> <span class="s1">'7-Day Rolling Mean of Tweets'</span><span class="p">],</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">'upper right'</span><span class="p">,</span>
            <span class="n">numpoints</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">labelspacing</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
 
 
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Tweets by Accounts Following ISIS by Date&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Total Tweets&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Tweets by Accounts Following ISIS by Date'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Date'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Total Tweets'</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
-
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACS8AAAQECAYAAACRTnzPAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img height="514" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACS8AAAQECAYAAACRTnzPAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xm8XdP9//HXySAxRJAaQgyh9YmaCSI1xlTULF9D0Co1
 tdXqoMW3VLU1tL7VmOqHmmNIFVEaU0pFQpQYy8eQEmOoISITkvP7Y62dvc++Z7r3nnvPdb2fj8d9
 nHP2WXvtteedrM/5rEKxWERERERERERERERERERERERERKSz9Wh2A0RERERERERERERERERERERE
@@ -7944,14 +7882,11 @@ JEmSJEmSJEmSJEmSJKlfmLwkSZIkSZIkSZIkSZIkqV+YvCRJkiRJkiRJkiRJkiSpX5i8JEmSJEmS
 JEmSJEmSJKlfmLwkSZIkSZIkSZIkSZIkqV+YvCRJkiRJkiRJkiRJkiSpX5i8JEmSJEmSJEmSJEmS
 JKlfmLwkSZIkSZIkSZIkSZIkqV+YvCRJkiRJkiRJkiRJkiSpX5i8JEmSJEmSJEmSJEmSJKlf/H/F
 FmB3jOUq2wAAAABJRU5ErkJggg==
-" width="1175" height="514">
-</div>
-
-</div>
-
+" width="1175">
+</img></div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -7959,139 +7894,122 @@ FmB3jOUq2wAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are several peaks that appears to occur after January 29th. With a peak around January 31st. To determine what dates were above the baseline, the date was cut off after January 29th. Through looking at the description of the</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="p">(</span><span class="n">days</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="s1">&#39;2016-01-29&#39;</span> <span class="p">:])</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="p">(</span><span class="n">days</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="s1">'2016-01-29'</span> <span class="p">:])</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
-
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Tweets</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>106.00000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>147.45283</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>96.10888</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>4.00000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>79.00000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>125.00000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>187.50000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>513.00000</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Tweets</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>count</th>
+<td>106.00000</td>
+</tr>
+<tr>
+<th>mean</th>
+<td>147.45283</td>
+</tr>
+<tr>
+<th>std</th>
+<td>96.10888</td>
+</tr>
+<tr>
+<th>min</th>
+<td>4.00000</td>
+</tr>
+<tr>
+<th>25%</th>
+<td>79.00000</td>
+</tr>
+<tr>
+<th>50%</th>
+<td>125.00000</td>
+</tr>
+<tr>
+<th>75%</th>
+<td>187.50000</td>
+</tr>
+<tr>
+<th>max</th>
+<td>513.00000</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">days</span><span class="p">[</span><span class="n">days</span><span class="p">[</span><span class="s1">&#39;Tweets&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">187</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Tweets&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">days</span><span class="p">[</span><span class="n">days</span><span class="p">[</span><span class="s1">'Tweets'</span><span class="p">]</span> <span class="o">>=</span> <span class="mi">187</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'Tweets'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
-
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Tweets</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016-01-31</th>
-      <td>513</td>
-    </tr>
-    <tr>
-      <th>2016-05-12</th>
-      <td>451</td>
-    </tr>
-    <tr>
-      <th>2016-03-25</th>
-      <td>408</td>
-    </tr>
-    <tr>
-      <th>2016-05-06</th>
-      <td>389</td>
-    </tr>
-    <tr>
-      <th>2016-04-08</th>
-      <td>376</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Tweets</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>2016-01-31</th>
+<td>513</td>
+</tr>
+<tr>
+<th>2016-05-12</th>
+<td>451</td>
+</tr>
+<tr>
+<th>2016-03-25</th>
+<td>408</td>
+</tr>
+<tr>
+<th>2016-05-06</th>
+<td>389</td>
+</tr>
+<tr>
+<th>2016-04-08</th>
+<td>376</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -8100,7 +8018,6 @@ FmB3jOUq2wAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>All of these days had rather horrific and cowardly terrorist attacks. January 31st was marked by an attack in Syria, the Sayyidah Zaynab bombings, that left more than 60 people dead and over 100 severely wounded. May 12th saw the Zara'a massacre in Syria, with the Alawites suffering at least 49 deaths (42 civilian, 7 military). It was surprising not to see anything following the Brussels attack. As it stands all of these are visible as major peaks following the event and is visible in the above graph.</p>
 <p>For the majority of these twitter users, they seem to be nothing more than tin soldiers. People who are tweeting often to a small number of users. As ISIS continues to be driven back there will likely be more tweets to continue to grow the narrative of the organization.</p>
-
 </div>
 </div>
 </div>
