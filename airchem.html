@@ -8,7 +8,7 @@
 		<!-- Enable responsiveness on mobile devices-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-		<title>Sam's Data Source</title>
+		<title>Ad Astra Per Alas Porci</title>
 
 		<!-- CSS -->
 		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
@@ -31,7 +31,7 @@
 			<h1>
 				<a href="/">
 					<img class="profile-picture" src="https://snag.gy/ZIKC4O.jpg">
-					Sam's Data Source
+					Ad Astra Per Alas Porci
 				</a>
 			</h1>
 			<p class="lead"></p>
@@ -1040,37 +1040,34 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Air-Quality">Air Quality<a class="anchor-link" href="#Air-Quality">&#182;</a></h1><p><a href="https://archive.ics.uci.edu/ml/machine-learning-databases/00360/">Data Source</a></p>
-<h2 id="Contents">Contents<a class="anchor-link" href="#Contents">&#182;</a></h2><p><a href="#cleaning">Cleaning</a><br>
+<h1 id="Air-Quality">Air Quality<a class="anchor-link" href="#Air-Quality">¶</a></h1><p><a href="https://archive.ics.uci.edu/ml/machine-learning-databases/00360/">Data Source</a></p>
+<h2 id="Contents">Contents<a class="anchor-link" href="#Contents">¶</a></h2><p><a href="#cleaning">Cleaning</a><br>
 <a href="#eda">Exploratory Data Analysis</a><br>
-<a href="#reg">Regression</a></p>
+<a href="#reg">Regression</a></br></br></p>
 <p>The data is from a gas sensor array that was placed at ground level in a highly polluted section of an unnamed Italian city.</p>
 <p>Several sensors were used in the detection of various pollutants. All various forms of metal oxides <sup>[1](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3264469/)</sup></p>
 <p>From these many sensors the question is whether or not a model could be built to predict the true levels of carbon monoxide present through the use of sensors that are attuned to other compounds. This would allow for the more robust installation of these sensor arrays that would still be versatile enough to detect the concentration of a specific compound. Additionally if it is found to have a relationship it could be used to determine if the values of a sensor are within an acceptable range.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1078,137 +1075,122 @@ h6:hover .anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id="cleaning"></a></p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In [61]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">air_quality</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;AirQualityUCI/AirQualityUCI.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span> <span class="c1"># &#39;;&#39; was delimiter rather than &#39;,&#39;</span>
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">air_quality</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'AirQualityUCI/AirQualityUCI.csv'</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">';'</span><span class="p">)</span> <span class="c1"># ';' was delimiter rather than ','</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In [62]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">air_quality</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt output_prompt">Out[62]:</div>
-
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Date</th>
-      <th>Time</th>
-      <th>CO(GT)</th>
-      <th>PT08.S1(CO)</th>
-      <th>NMHC(GT)</th>
-      <th>C6H6(GT)</th>
-      <th>PT08.S2(NMHC)</th>
-      <th>NOx(GT)</th>
-      <th>PT08.S3(NOx)</th>
-      <th>NO2(GT)</th>
-      <th>PT08.S4(NO2)</th>
-      <th>PT08.S5(O3)</th>
-      <th>T</th>
-      <th>RH</th>
-      <th>AH</th>
-      <th>Unnamed: 15</th>
-      <th>Unnamed: 16</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>10/03/2004</td>
-      <td>18.00.00</td>
-      <td>2,6</td>
-      <td>1360.0</td>
-      <td>150.0</td>
-      <td>11,9</td>
-      <td>1046.0</td>
-      <td>166.0</td>
-      <td>1056.0</td>
-      <td>113.0</td>
-      <td>1692.0</td>
-      <td>1268.0</td>
-      <td>13,6</td>
-      <td>48,9</td>
-      <td>0,7578</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>10/03/2004</td>
-      <td>19.00.00</td>
-      <td>2</td>
-      <td>1292.0</td>
-      <td>112.0</td>
-      <td>9,4</td>
-      <td>955.0</td>
-      <td>103.0</td>
-      <td>1174.0</td>
-      <td>92.0</td>
-      <td>1559.0</td>
-      <td>972.0</td>
-      <td>13,3</td>
-      <td>47,7</td>
-      <td>0,7255</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Date</th>
+<th>Time</th>
+<th>CO(GT)</th>
+<th>PT08.S1(CO)</th>
+<th>NMHC(GT)</th>
+<th>C6H6(GT)</th>
+<th>PT08.S2(NMHC)</th>
+<th>NOx(GT)</th>
+<th>PT08.S3(NOx)</th>
+<th>NO2(GT)</th>
+<th>PT08.S4(NO2)</th>
+<th>PT08.S5(O3)</th>
+<th>T</th>
+<th>RH</th>
+<th>AH</th>
+<th>Unnamed: 15</th>
+<th>Unnamed: 16</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>10/03/2004</td>
+<td>18.00.00</td>
+<td>2,6</td>
+<td>1360.0</td>
+<td>150.0</td>
+<td>11,9</td>
+<td>1046.0</td>
+<td>166.0</td>
+<td>1056.0</td>
+<td>113.0</td>
+<td>1692.0</td>
+<td>1268.0</td>
+<td>13,6</td>
+<td>48,9</td>
+<td>0,7578</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>1</th>
+<td>10/03/2004</td>
+<td>19.00.00</td>
+<td>2</td>
+<td>1292.0</td>
+<td>112.0</td>
+<td>9,4</td>
+<td>955.0</td>
+<td>103.0</td>
+<td>1174.0</td>
+<td>92.0</td>
+<td>1559.0</td>
+<td>972.0</td>
+<td>13,3</td>
+<td>47,7</td>
+<td>0,7255</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">air_quality</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<pre><class &#x27;pandas.core.frame.dataframe&#x27;>
 RangeIndex: 9471 entries, 0 to 9470
 Data columns (total 17 columns):
 Date             9357 non-null object
@@ -1234,10 +1216,8 @@ None
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1246,7 +1226,6 @@ None
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Just from looking at the first few rows in the dataframe there are a few issues. The data for some of the columns has been recorded in the european style of commas instead of periods to indicate the decimals. Causing them to appear as objects, rather than numeric values (float64). The last two columns contain no information.</p>
 <p>The info function is useful in that it shows the number of entries, how many contain a value, and what the type of that value is. It is useful to find NaNs, but does have weaknesses. If non existent values were filled using a number (i.e. -9999) it will not be counted. In order to be certain the data is as desired it will be worthwhile to go through a few more checks to make certain that the data is in the correct format and contains relevant information.</p>
-
 </div>
 </div>
 </div>
@@ -1360,7 +1339,6 @@ None
 <p>Ground truth specifies that this reading was the true value, taken from a reference certified analytic device that was placed in the vincinity of the sensor array. The units for all ground truth readings were in $\frac{mg}{m^3}$.</p>
 <p>Measurements were taken each hour. The experiment ran for a little more than a year, starting March 10th, 2004 to April 4th, 2005</p>
 <p>Non-existent values were given the value of -200. These will be replaced by NaNs for further analysis, and dropped accordingly.</p>
-
 </div>
 </div>
 </div>
@@ -1370,35 +1348,30 @@ None
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Below a mask was created in order to drop the unnamed columns from the dataframe. The returned dataframe was then assigned to a new variable in order to not have to worry about reassigning values.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In [63]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">air_quality</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Unnamed: 15&quot;</span><span class="p">,</span> <span class="s2">&quot;Unnamed: 16&quot;</span><span class="p">]]</span>
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">air_quality</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"Unnamed: 15"</span><span class="p">,</span> <span class="s2">"Unnamed: 16"</span><span class="p">]]</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In [64]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">air</span> <span class="o">=</span> <span class="n">air_quality</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1406,31 +1379,28 @@ None
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now to remove all NaNs that occupy entire rows and also replace values of -200 with NaN</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In [33]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">air</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
     <span class="c1"># Commas present only as string, before converting to numeric replace with decimals</span>
-    <span class="n">air</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">air</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">==</span><span class="nb">str</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">air</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">air</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span><span class="s1">'.'</span><span class="p">)</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">==</span><span class="nb">str</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
     
-<span class="n">air</span> <span class="o">=</span> <span class="n">air</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">air</span> <span class="o">=</span> <span class="n">air</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">'all'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">air</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
         <span class="n">air</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">air</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span> 
-                                    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;-200&#39;</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="o">-</span><span class="mi">200</span> <span class="c1"># If item is present as string or integer</span>
+                                    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">'-200'</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="o">-</span><span class="mi">200</span> <span class="c1"># If item is present as string or integer</span>
                                     <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1438,214 +1408,201 @@ None
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Again another mask needs to be created to specify which columns need to be converted to numeric values and which ones do not. The Time and Date columns are not of great concern for this analysis, but they would be converted to datetime.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">to_nums</span> <span class="o">=</span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">air</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">]]</span>
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">to_nums</span> <span class="o">=</span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">air</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'Date'</span><span class="p">,</span> <span class="s1">'Time'</span><span class="p">]]</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">air</span><span class="p">[</span><span class="n">to_nums</span><span class="p">]</span> <span class="o">=</span> <span class="n">air</span><span class="p">[</span><span class="n">to_nums</span><span class="p">]</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="c1"># Apply float to all needed columns</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">air</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
-
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CO(GT)</th>
-      <th>PT08.S1(CO)</th>
-      <th>NMHC(GT)</th>
-      <th>C6H6(GT)</th>
-      <th>PT08.S2(NMHC)</th>
-      <th>NOx(GT)</th>
-      <th>PT08.S3(NOx)</th>
-      <th>NO2(GT)</th>
-      <th>PT08.S4(NO2)</th>
-      <th>PT08.S5(O3)</th>
-      <th>T</th>
-      <th>RH</th>
-      <th>AH</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>7674.000000</td>
-      <td>8991.000000</td>
-      <td>914.000000</td>
-      <td>8991.000000</td>
-      <td>8991.000000</td>
-      <td>7718.000000</td>
-      <td>8991.000000</td>
-      <td>7715.000000</td>
-      <td>8991.000000</td>
-      <td>8991.000000</td>
-      <td>8991.000000</td>
-      <td>8991.000000</td>
-      <td>8991.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>2.152750</td>
-      <td>1099.833166</td>
-      <td>218.811816</td>
-      <td>10.083105</td>
-      <td>939.153376</td>
-      <td>246.896735</td>
-      <td>835.493605</td>
-      <td>113.091251</td>
-      <td>1456.264598</td>
-      <td>1022.906128</td>
-      <td>18.317829</td>
-      <td>49.234201</td>
-      <td>1.025530</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>1.453252</td>
-      <td>217.080037</td>
-      <td>204.459921</td>
-      <td>7.449820</td>
-      <td>266.831429</td>
-      <td>212.979168</td>
-      <td>256.817320</td>
-      <td>48.370108</td>
-      <td>346.206794</td>
-      <td>398.484288</td>
-      <td>8.832116</td>
-      <td>17.316892</td>
-      <td>0.403813</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>0.100000</td>
-      <td>647.000000</td>
-      <td>7.000000</td>
-      <td>0.100000</td>
-      <td>383.000000</td>
-      <td>2.000000</td>
-      <td>322.000000</td>
-      <td>2.000000</td>
-      <td>551.000000</td>
-      <td>221.000000</td>
-      <td>-1.900000</td>
-      <td>9.200000</td>
-      <td>0.184700</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>11.900000</td>
-      <td>2040.000000</td>
-      <td>1189.000000</td>
-      <td>63.700000</td>
-      <td>2214.000000</td>
-      <td>1479.000000</td>
-      <td>2683.000000</td>
-      <td>340.000000</td>
-      <td>2775.000000</td>
-      <td>2523.000000</td>
-      <td>44.600000</td>
-      <td>88.700000</td>
-      <td>2.231000</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>CO(GT)</th>
+<th>PT08.S1(CO)</th>
+<th>NMHC(GT)</th>
+<th>C6H6(GT)</th>
+<th>PT08.S2(NMHC)</th>
+<th>NOx(GT)</th>
+<th>PT08.S3(NOx)</th>
+<th>NO2(GT)</th>
+<th>PT08.S4(NO2)</th>
+<th>PT08.S5(O3)</th>
+<th>T</th>
+<th>RH</th>
+<th>AH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>count</th>
+<td>7674.000000</td>
+<td>8991.000000</td>
+<td>914.000000</td>
+<td>8991.000000</td>
+<td>8991.000000</td>
+<td>7718.000000</td>
+<td>8991.000000</td>
+<td>7715.000000</td>
+<td>8991.000000</td>
+<td>8991.000000</td>
+<td>8991.000000</td>
+<td>8991.000000</td>
+<td>8991.000000</td>
+</tr>
+<tr>
+<th>mean</th>
+<td>2.152750</td>
+<td>1099.833166</td>
+<td>218.811816</td>
+<td>10.083105</td>
+<td>939.153376</td>
+<td>246.896735</td>
+<td>835.493605</td>
+<td>113.091251</td>
+<td>1456.264598</td>
+<td>1022.906128</td>
+<td>18.317829</td>
+<td>49.234201</td>
+<td>1.025530</td>
+</tr>
+<tr>
+<th>std</th>
+<td>1.453252</td>
+<td>217.080037</td>
+<td>204.459921</td>
+<td>7.449820</td>
+<td>266.831429</td>
+<td>212.979168</td>
+<td>256.817320</td>
+<td>48.370108</td>
+<td>346.206794</td>
+<td>398.484288</td>
+<td>8.832116</td>
+<td>17.316892</td>
+<td>0.403813</td>
+</tr>
+<tr>
+<th>min</th>
+<td>0.100000</td>
+<td>647.000000</td>
+<td>7.000000</td>
+<td>0.100000</td>
+<td>383.000000</td>
+<td>2.000000</td>
+<td>322.000000</td>
+<td>2.000000</td>
+<td>551.000000</td>
+<td>221.000000</td>
+<td>-1.900000</td>
+<td>9.200000</td>
+<td>0.184700</td>
+</tr>
+<tr>
+<th>25%</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>50%</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>75%</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>max</th>
+<td>11.900000</td>
+<td>2040.000000</td>
+<td>1189.000000</td>
+<td>63.700000</td>
+<td>2214.000000</td>
+<td>1479.000000</td>
+<td>2683.000000</td>
+<td>340.000000</td>
+<td>2775.000000</td>
+<td>2523.000000</td>
+<td>44.600000</td>
+<td>88.700000</td>
+<td>2.231000</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1653,60 +1610,50 @@ None
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>After all of the cleaning has been successfully completed it is possible to move on to the analysis portion of the project.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In [35]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">air_</span> <span class="o">=</span> <span class="n">air</span><span class="p">[[</span><span class="n">column</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">air</span><span class="o">.</span><span class="n">columns</span> 
-            <span class="k">if</span> <span class="s1">u&#39;(GT)&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">column</span> <span class="ow">or</span> <span class="n">column</span> <span class="o">==</span> <span class="s2">u&quot;CO(GT)&quot;</span><span class="p">]]</span> <span class="c1"># New dataframe with columns for analysis</span>
+            <span class="k">if</span> <span class="s1">u'(GT)'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">column</span> <span class="ow">or</span> <span class="n">column</span> <span class="o">==</span> <span class="s2">u"CO(GT)"</span><span class="p">]]</span> <span class="c1"># New dataframe with columns for analysis</span>
 
-<span class="n">air_</span> <span class="o">=</span> <span class="n">air_</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span>
+<span class="n">air_</span> <span class="o">=</span> <span class="n">air_</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">'any'</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="EDA">EDA<a class="anchor-link" href="#EDA">&#182;</a></h1><p><a id="eda"></a>
+<h1 id="EDA">EDA<a class="anchor-link" href="#EDA">¶</a></h1><p><a id="eda"></a>
 For the desired analysis, will need to remove the present ground truths for all of the chemical species except for carbon monoxide.<br>
-To hone it down even further a correlation plot can show how related the variables are to each other</p>
-
+To hone it down even further a correlation plot can show how related the variables are to each other</br></p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In [37]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">air_</span><span class="o">.</span><span class="n">corr</span><span class="p">())</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
-
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0cAAAKACAYAAABXIAM7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img height="320" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0cAAAKACAYAAABXIAM7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3XmYJFWVsPG3utmRTZBxFEQWOaLIiCCi7KigDiMNOigj
 CKg4yCIyoCggmyguIMKwCg7bAIMLotiyySIqoILiJ4oHRXBBQHaQzW66vj/uTczOzqys6q7KzO56
 f8+TT0xF3Ii4EVU4efrce+7Q8PAwkiRJkjTZTel3ByRJkiRpEBgcSZIkSRIGR5IkSZIEGBxJkiRJ
@@ -2331,14 +2278,11 @@ YDiSJKlBHMggqakOBRa3BiOAzFwJLAOOrKUqSZJUG8ORpKaaCKwb4t7TwN5drEWSJI0ChiNJTbUr
 zpGkRoqId4Ch/gfYH4gG3h8H9GXmeCRJ0pjjypGkpppfdwGSJGl0ceVIkiRJknAggyRJkiQBhiNJ
 kiRJAgxHkiRJkgQYjiRJkiQJMBxJkiRJEmA4kiRJkiTAcCRJkiRJgOFIkiRJkgDDkSRJkiQBhiNJ
 kiRJAgxHkiRJkgQYjiRJkiQJgP8HJNWtuos8nMIAAAAASUVORK5CYII=
-" width="419" height="320">
-</div>
-
-</div>
-
+" width="419">
+</img></div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -2346,46 +2290,37 @@ kiRJAgxHkiRJkgQYjiRJkiQJgP8HJNWtuos8nMIAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It would appear that there is a strong correlation between the Carbon Monoxide levels and the sensors for all of the available species, all positive, except for the nitrogen oxide species which are negatively correlated. Time and absolute humidity have a weak correlation and the relative humidity does not appear to have any effect on the carbon monoxide levels.<br>
-A pairplot with a regression focus helps confirm the assumption</p>
-
+A pairplot with a regression focus helps confirm the assumption</br></p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sensors</span> <span class="o">=</span> <span class="p">[</span><span class="n">sensor</span> <span class="k">for</span> <span class="n">sensor</span> <span class="ow">in</span> <span class="n">air_</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">sensor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;RH&#39;</span><span class="p">,</span> <span class="s1">&#39;CO(GT)&#39;</span><span class="p">,</span> <span class="s1">&#39;PT08.S1(CO)&#39;</span><span class="p">]]</span>
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sensors</span> <span class="o">=</span> <span class="p">[</span><span class="n">sensor</span> <span class="k">for</span> <span class="n">sensor</span> <span class="ow">in</span> <span class="n">air_</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">sensor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'Date'</span><span class="p">,</span> <span class="s1">'Time'</span><span class="p">,</span> <span class="s1">'T'</span><span class="p">,</span> <span class="s1">'RH'</span><span class="p">,</span> <span class="s1">'CO(GT)'</span><span class="p">,</span> <span class="s1">'PT08.S1(CO)'</span><span class="p">]]</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In [38]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">air_</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">),</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;reg&#39;</span><span class="p">)</span>
+<div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">air_</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">'any'</span><span class="p">),</span> <span class="n">kind</span><span class="o">=</span><span class="s1">'reg'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
-
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADLcAAAydCAYAAAA74xF8AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img height="1614" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADLcAAAydCAYAAAA74xF8AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3XuUnHd95/nP8zxVfa1udcsXSZZl4wsUxkIKGGzhI+JA
 IBdCmIknm0k2M2ECWfDkzGyyZ84QkgyZnbBJJufsnjMHsokXAl7OhgnJZj1EmIy5GmTZSAYcJLcv
 hdySkNRqXVp9ra7bc/ntH1VPdd27uru6Lt3v1zkcWfXU5Veinu/ze76/3/f3s4wxAgAAAAAAAAAA
@@ -23187,14 +23122,11 @@ jFsAAAAAAAAAAAAAAAAYY9wCAAAAAAAAAAAAAADAGOMWAAAAAAAAAAAAAAAAxhi3AAAAAAAAAAAA
 AAAAMMa4BQAAAAAAAAAAAAAAgDHGLQAAAAAAAAAAAAAAAIwxbgEAAAAAAAAAAAAAAGCMcQsAAAAA
 AAAAAAAAAABjjFsAAAAAAAAAAAAAAAAYY9wCAAAAAAAAAAAAAADAmFs1BLDRDLLtfQAAAABJRU5E
 rkJggg==
-" width="1627" height="1614">
-</div>
-
-</div>
-
+" width="1627">
+</img></div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -23202,156 +23134,123 @@ rkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id="reg"></a></p>
-<h1 id="Regression">Regression<a class="anchor-link" href="#Regression">&#182;</a></h1><p>From above it would appear that the NOx species relative to carbon monoxide has a non linear appearance. Other than that the chemical sensors present have a linear relationship to the ground truth of carbon monoxide.</p>
+<h1 id="Regression">Regression<a class="anchor-link" href="#Regression">¶</a></h1><p>From above it would appear that the NOx species relative to carbon monoxide has a non linear appearance. Other than that the chemical sensors present have a linear relationship to the ground truth of carbon monoxide.</p>
 <p>The information can then be used to construct the linear models. The models can then be verified through both the use of a train test split to introduce unknown data to the model to see how resilient it is to overfitting.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In [54]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 <span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">KFold</span>
 
-<span class="n">Y</span> <span class="o">=</span> <span class="n">air_</span><span class="p">[</span><span class="s1">&#39;CO(GT)&#39;</span><span class="p">]</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">air_</span><span class="p">[</span><span class="s1">'CO(GT)'</span><span class="p">]</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">air_</span><span class="p">[</span><span class="n">sensors</span><span class="p">]</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In [40]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt output_prompt">Out[40]:</div>
-
-
 <div class="output_text output_subarea output_execute_result">
-<pre>Index([u&#39;PT08.S2(NMHC)&#39;, u&#39;PT08.S3(NOx)&#39;, u&#39;PT08.S4(NO2)&#39;, u&#39;PT08.S5(O3)&#39;,
-       u&#39;AH&#39;],
-      dtype=&#39;object&#39;)</pre>
-</div>
-
-</div>
-
+<pre>Index([u'PT08.S2(NMHC)', u'PT08.S3(NOx)', u'PT08.S4(NO2)', u'PT08.S5(O3)',
+       u'AH'],
+      dtype='object')</pre>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In [41]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In [42]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">lin_reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In [43]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">lin_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt output_prompt">Out[43]:</div>
-
-
 <div class="output_text output_subarea output_execute_result">
 <pre>LinearRegression(copy_X=True, fit_intercept=True, n_jobs=1, normalize=False)</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In [44]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">lin_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In [60]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Predicted CO(GT)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'+'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Predicted CO(GT)"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;True CO(GT)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"True CO(GT)"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
-
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+YAAAPiCAYAAADy8ccxAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img height="497" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+YAAAPiCAYAAADy8ccxAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAWJQAAFiUBSVIk8AAAIABJREFUeJzs3Xu0rWddH/pvJOEiSfHSuBVkb4PI4xaF4iUDQQTv1316
 rDkej554arEbHcQbVQvUoBiljhatZYRq1xKNRmQ0DXQcZ7vV1KPCBjkNipQ2Zj2oxL1r1I1F3O5I
 lAD7/DHXPGutmbnWmpd3rmdePp8x5piX532f5/e+c+1BvsznfZ8rLl++HAAAAKCNj2hdAAAAAKwz
@@ -24068,43 +23967,31 @@ pZk5lh4WSJJGmS3mkiRpMnk3ZcK5I+oOBHg/ZfK6w+oORJJUL1vMJUmSJEmqkS3mkiRJkiTVyMRc
 kiRJkqQamZhLkiRJklQjE3NJkiRJkmpkYi5JkiRJUo1MzCVJkiRJqpGJuSRJkiRJNTIxlyRJkiSp
 RibmkiRJkiTVyMRckiRJkqQamZhLkiRJklQjE3NJkiRJkmpkYi5JkiRJUo3+B4pXlQ/OlMkRAAAA
 AElFTkSuQmCC
-" width="499" height="497">
-</div>
-
-</div>
-
+" width="499">
+</img></div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In [46]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">lin_reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt output_prompt">Out[46]:</div>
-
-
 <div class="output_text output_subarea output_execute_result">
 <pre>0.85189650526074745</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -24113,7 +24000,6 @@ AElFTkSuQmCC
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is a satisfactory $r^2$ value for this situation. In the physical sciences typically an $r^2$ in the 0.75 to 0.9 range is acceptable. Because of linear regression containing that irreducible errors that are caused by the</p>
 <p>An $r^2$ value of more than 0.9 is always something that causes a high degree of overfitting of the model. If new data were entered, it would likely be found to be very</p>
-
 </div>
 </div>
 </div>
@@ -24123,55 +24009,46 @@ AElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Using sklearn is useful for visualizing the outcome of the model versus the truth, but in this case it would also be useful to perform the same analysis in another libarary, statsmodels, to get a clearer picture of the influence of these variables upon the output.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In [51]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="kn">as</span> <span class="nn">sm</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="c1"># Add intercept</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In [52]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In [53]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="k">print</span> <span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>                            OLS Regression Results                            
@@ -24186,7 +24063,7 @@ Df Residuals:                    7338   BIC:                         1.153e+04
 Df Model:                           5                                         
 Covariance Type:            nonrobust                                         
 =================================================================================
-                    coef    std err          t      P&gt;|t|      [95.0% Conf. Int.]
+                    coef    std err          t      P>|t|      [95.0% Conf. Int.]
 ---------------------------------------------------------------------------------
 const            -3.0186      0.075    -40.370      0.000        -3.165    -2.872
 PT08.S2(NMHC)     0.0049   8.54e-05     57.122      0.000         0.005     0.005
@@ -24208,10 +24085,8 @@ strong multicollinearity or other numerical problems.
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -24219,7 +24094,6 @@ strong multicollinearity or other numerical problems.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From the work done above it would be appropriate to use the other sensors either to disregard outliers due to suspicious reponse, or to build sensor arrays with limited sensors. This would be very useful in urban situations where pollutants originate from common recurring sources.</p>
-
 </div>
 </div>
 </div>

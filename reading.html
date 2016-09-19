@@ -8,7 +8,7 @@
 		<!-- Enable responsiveness on mobile devices-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-		<title>Sam's Data Source</title>
+		<title>Ad Astra Per Alas Porci</title>
 
 		<!-- CSS -->
 		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
@@ -31,7 +31,7 @@
 			<h1>
 				<a href="/">
 					<img class="profile-picture" src="https://snag.gy/ZIKC4O.jpg">
-					Sam's Data Source
+					Ad Astra Per Alas Porci
 				</a>
 			</h1>
 			<p class="lead"></p>
@@ -1040,18 +1040,17 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Random-Reading">Random Reading<a class="anchor-link" href="#Random-Reading">&#182;</a></h1><p>I love reading papers, though lately my collection has been growing and growing. The paralysis of choice certainly hindered my progress, did I want to read about statistics? NLP? Data Science and Art? In the beginning the papers were organized by their subject matter, and each day would be dedicated to reading about that topic. Eventually the flood kept coming in and instead of stopping and reading what I had, I kept hoarding them.</p>
+<h1 id="Random-Reading">Random Reading<a class="anchor-link" href="#Random-Reading">¶</a></h1><p>I love reading papers, though lately my collection has been growing and growing. The paralysis of choice certainly hindered my progress, did I want to read about statistics? NLP? Data Science and Art? In the beginning the papers were organized by their subject matter, and each day would be dedicated to reading about that topic. Eventually the flood kept coming in and instead of stopping and reading what I had, I kept hoarding them.</p>
 <p>Today, though, I decided I would do a little bit to make my life a little easier. Using python I created a small script that would be able to take a random article from my library of choices and immediately open it in my pdf viewer, <a href="http://skim-app.sourceforge.net/">Skim</a>, if you're curious.</p>
 <p>Here's the code below:</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Randomly selects an article from a directory</span>
 <span class="c1"># Then opens in pdf reader. Can change to refer to any directory</span>
 <span class="c1"># Hopefully this gets me to read more DS papers!</span>
@@ -1060,15 +1059,13 @@ h6:hover .anchor-link {
 <span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">call</span>
 <span class="kn">from</span> <span class="nn">random</span> <span class="k">import</span> <span class="n">choice</span>
 
-<span class="n">papers</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/Users/sebozek/Dropbox/Articles/To Read&#39;</span><span class="p">)</span>
+<span class="n">papers</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">'/Users/sebozek/Dropbox/Articles/To Read'</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">papers</span><span class="p">)</span>
-<span class="n">call</span><span class="p">([</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">])</span>
+<span class="n">call</span><span class="p">([</span><span class="s1">'open'</span><span class="p">,</span> <span class="n">x</span><span class="p">])</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1077,7 +1074,6 @@ h6:hover .anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It just exists as a small script in that folder I can call on in terminal.</p>
 <p>Already used it to read two articles today!</p>
-
 </div>
 </div>
 </div>
